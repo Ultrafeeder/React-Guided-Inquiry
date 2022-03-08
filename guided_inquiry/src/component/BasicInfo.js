@@ -1,5 +1,19 @@
 import React from "react";
 
-const BasicInfo = (...props) => {};
+const BasicInfo = ({ person }) => {
+  // const person  = props;
+  console.log(person);
 
-// export default BasicInfo;
+  return person.map((data) => {
+    return (
+      <div key={data._id}>
+        <p>First Name: {data.firstName}</p>
+        <p>Last Name: {data.lastName}</p>
+        <p>Mobile Number: {data.phone}</p>
+        <p>Birthday: {data.birthday}</p>
+      </div>
+    );
+  });
+};
+
+export default BasicInfo;
